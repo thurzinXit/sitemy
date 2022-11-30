@@ -1,5 +1,5 @@
 import type { GatewayActivity, GatewayActivityTimestamps } from "discord-api-types/v10";
-import { useState } from "react";
+import { Dispatch, SetStateAction, useState } from "react";
 
 export const useUser = () => {
 	return useState<LanyardUser>(() => ({
@@ -22,16 +22,18 @@ export const useUser = () => {
 	}));
 };
 
+export type StateUser = Dispatch<SetStateAction<LanyardUser>>;
+
 export class Lanyard {
 	ws!: WebSocket;
 	heartbeat!: NodeJS.Timer;
-	user_id: string;
+	userId: string;
 
 	constructor(userId: string) {
-		this.user_id = userId;
+		this.userId = userId;
 	}
 
-	connect(setUser: React.Dispatch<React.SetStateAction<LanyardUser>>) {
+	connect(setUser: StateUser) {
 		this.ws = new WebSocket("wss://api.lanyard.rest/socket");
 
 		this.ws.onopen = () => {
@@ -48,7 +50,7 @@ export class Lanyard {
 						() => this.ws.send(JSON.stringify({ op: LanyardOpcode.Heartbeat })),
 						d.heartbeat_interval,
 					);
-					this.ws.send(JSON.stringify({ op: LanyardOpcode.Initialize, d: { subscribe_to_id: this.user_id } }));
+					this.ws.send(JSON.stringify({ op: LanyardOpcode.Initialize, d: { subscribe_to_id: this.userId } }));
 					break;
 				}
 

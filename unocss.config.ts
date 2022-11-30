@@ -1,11 +1,6 @@
 import { defineConfig, presetIcons, presetUno, presetWebFonts } from "unocss";
 
 export default defineConfig({
-	theme: {
-		colors: {
-			banner: "rgb(223, 208, 193)",
-		},
-	},
 	presets: [
 		presetUno({ dark: "class" }),
 		presetWebFonts({

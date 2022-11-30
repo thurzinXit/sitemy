@@ -1,8 +1,8 @@
-export default function CardBadges() {
+export default function Badges() {
 	return (
-		<div className="absolute top-[120px] right-[16px] justify-end select-none">
+		<div className="absolute top-[120px] right-[16px] justify-end">
 			<img
-				src="/assets/discord-active-developer.svg"
+				src="/assets/icons/discord-active-developer.svg"
 				alt="active-developer"
 				width="22"
 				height="22"
@@ -10,7 +10,7 @@ export default function CardBadges() {
 				draggable="false"
 			/>
 			{/* <img
-				src="/assets/discord-nitro.svg"
+				src="/assets/icons/discord-nitro.svg"
 				alt="discord-nitro"
 				width="22"
 				height="22"
@@ -18,7 +18,7 @@ export default function CardBadges() {
 				draggable="false"
 			/>
 			<img
-				src="/assets/discord-booster.svg"
+				src="/assets/icons/discord-booster.svg"
 				alt="discord-booster"
 				width="22"
 				height="22"

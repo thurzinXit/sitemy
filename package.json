@@ -34,8 +34,8 @@
 		"@types/react": "^18.0.25",
 		"@types/react-dom": "^18.0.9",
 		"@typescript-eslint/parser": "^5.43.0",
-		"@unocss/cli": "^0.46.5",
-		"@unocss/reset": "^0.46.5",
+		"@unocss/cli": "^0.47.2",
+		"@unocss/reset": "^0.47.2",
 		"astro": "^1.6.10",
 		"astro-critters": "^1.1.7",
 		"discord-api-types": "^0.37.18",
@@ -44,7 +44,6 @@
 		"eslint-plugin-astro": "^0.21.0",
 		"prettier": "^2.6.2",
 		"prettier-plugin-astro": "^0.7.0",
-		"unocss": "^0.46.5"
-	},
-	"packageManager": "yarn@4.0.0-rc.31"
+		"unocss": "^0.47.2"
+	}
 }

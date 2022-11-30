@@ -1,11 +1,11 @@
+import { Lanyard, useUser } from "@composables/LanyardUser";
 import { useEffect } from "react";
-import { Lanyard, useUser } from "~/composables/use-user";
-import { GameCard } from "./activity/GameCard";
-import { SpotifyCard } from "./activity/SpotifyCard";
-import CardAvatar from "./CardAvatar";
-import CardBadges from "./CardBadges";
-import CardDates from "./CardDates";
-import CardInfo from "./CardInfo";
+import About from "./About";
+import Game from "./activity/Game";
+import Spotify from "./activity/spotify/Spotify";
+import Avatar from "./Avatar";
+import Badges from "./Badges";
+import Dates from "./Dates";
 
 export default function Card() {
 	const lanyard = new Lanyard("847865068657836033");
@@ -31,13 +31,13 @@ export default function Card() {
 							height="120"
 							aria-hidden="true"
 							draggable="false"
-							className="block select-none"
+							className="block"
 						/>
 					</picture>
 
 					<div className="absolute top-[76px] left-[16px]">
-						<div className="rounded-full select-none">
-							<CardAvatar status={user.discord_status} />
+						<div className="rounded-full">
+							<Avatar data={user.discord_status} />
 						</div>
 					</div>
 
@@ -47,26 +47,26 @@ export default function Card() {
 							<span className="dark:text-slate-300">#8956</span>
 						</div>
 
-						<CardBadges />
+						<Badges />
 					</div>
 
 					<div className="px-4 pb-3.5 flex-initial text-sm">
-						{/* <div className="pb-2.5">
+						<div className="pb-2.5">
 							<img
 								src="https://cdn.discordapp.com/emojis/1037061490664022127.webp?size=44&quality=lossless"
 								iara-label=":twice:"
 								alt="twice"
 								draggable="false"
-								className="w-[48px] h-[48px] -my-px mr-1 select-none"
+								className="w-[48px] h-[48px] -my-px mr-1"
 							/>
-						</div> */}
+						</div>
 
 						<div className="w-full h-[1px] bg-zinc-800 mb-3"></div>
-						<CardInfo />
-						<CardDates />
+						<About />
+						<Dates />
 
-						{game && <GameCard activity={game} />}
-						{spotify && !game && <SpotifyCard spotify={spotify} />}
+						{game && <Game data={game} />}
+						{spotify && !game && <Spotify data={spotify} />}
 					</div>
 				</div>
 			</div>

@@ -11,7 +11,7 @@
 			"parserOptions": {
 				"sourceType": "module",
 				"parser": "@typescript-eslint/parser",
-				"extraFileExtensions": [".astro"]
+				"extraFileExtensions": [".astro", "*.ts"]
 			}
 		}
 	],

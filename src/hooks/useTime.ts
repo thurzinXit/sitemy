@@ -1,7 +1,7 @@
 import type { GatewayActivityTimestamps } from "discord-api-types/v10";
 import { useEffect, useState } from "react";
 
-const padding = (n: string | number, removeZero: boolean) => (n < 10 ? `${removeZero === true ? `${n}` : `0${n}`}` : n);
+const padding = (n: string | number) => (n < 10 ? `${n}` : n);
 
 const DAY = 1000 * 60 * 60 * 24;
 const HOUR = 1000 * 60 * 60;
@@ -25,7 +25,7 @@ type Times =
 			completion: number;
 	  };
 
-function getTime(timestamps: GatewayActivityTimestamps, removeZero: boolean): Times | null {
+function getTime(timestamps: GatewayActivityTimestamps): Times | null {
 	if (!timestamps) return null;
 
 	const { start, end } = timestamps;
@@ -42,13 +42,11 @@ function getTime(timestamps: GatewayActivityTimestamps, removeZero: boolean): Ti
 		.toString()
 		.padStart(2, "0");
 
-	if (removeZero === false) seconds = Math.floor((miliseconds % MINUTE) / SECOND).toString();
-
 	if (!end) {
 		if (days > 0) return { start: `${days > 1 ? `${days} days` : `${days} day`}`, end: null, completion: null };
 
 		return {
-			start: `${hours ? `${hours}:` : ""}${padding(minutes, removeZero)}:${padding(seconds, removeZero)}`,
+			start: `${hours ? `${hours}:` : ""}${padding(minutes)}:${padding(seconds)}`,
 			end: null,
 			completion: null,
 		};
@@ -62,33 +60,31 @@ function getTime(timestamps: GatewayActivityTimestamps, removeZero: boolean): Ti
 		.toString()
 		.padStart(2, "0");
 
-	if (removeZero === false) endSeconds = Math.floor((endMiliseconds % MINUTE) / SECOND).toString();
-
 	const calc = Math.floor((miliseconds / endMiliseconds) * 10000) / 100;
 
 	if (!start) {
 		return {
 			start: null,
-			end: `${endHours ? `${endHours}:` : ""}${padding(endMinutes, removeZero)}:${padding(endSeconds, removeZero)}`,
+			end: `${endHours ? `${endHours}:` : ""}${padding(endMinutes)}:${padding(endSeconds)}`,
 			completion: calc > 100 ? 100 : calc,
 		};
 	}
 
 	return {
-		start: `${hours ? `${hours}:` : ""}${padding(minutes, removeZero)}:${padding(seconds, removeZero)}`,
-		end: `${endHours ? `${endHours}:` : ""}${padding(endMinutes, removeZero)}:${padding(endSeconds, removeZero)}`,
+		start: `${hours ? `${hours}:` : ""}${padding(minutes)}:${padding(seconds)}`,
+		end: `${endHours ? `${endHours}:` : ""}${padding(endMinutes)}:${padding(endSeconds)}`,
 		completion: calc > 100 ? 100 : calc,
 	};
 }
 
-export function useTime(timestamps: GatewayActivityTimestamps, removeZero = true) {
-	const [time, setTime] = useState<Times | null>(getTime(timestamps, removeZero));
+export function useTime(timestamps: GatewayActivityTimestamps) {
+	const [time, setTime] = useState<Times | null>(getTime(timestamps));
 
 	useEffect(() => {
 		if (!timestamps) return setTime(null);
 
 		const interval = setInterval(() => {
-			setTime(getTime(timestamps, removeZero));
+			setTime(getTime(timestamps));
 		}, 200);
 
 		return () => clearInterval(interval);
