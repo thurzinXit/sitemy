@@ -17,7 +17,7 @@ export default function Avatar({ data }: InternalAvatarProps) {
 			role="img"
 			aria-label="niskii, avatar"
 			aria-hidden="false"
-			className="w-[92px] h-[92px] border-6 relative rounded-full border-white dark:border-zinc-900"
+			className="w-[92px] h-[92px] border-6 relative rounded-full border-white dark:border-zinc-900 select-none"
 		>
 			<svg width="92" height="80" viewBox="0 0 92 80" className="absolute">
 				<defs>

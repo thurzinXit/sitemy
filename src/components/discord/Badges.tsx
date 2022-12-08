@@ -1,6 +1,6 @@
 export default function Badges() {
 	return (
-		<div className="absolute top-[120px] right-[16px] justify-end">
+		<div className="absolute top-[120px] right-[16px] justify-end select-none gap-2">
 			<img
 				src="/assets/icons/discord-active-developer.svg"
 				alt="active-developer"
@@ -9,7 +9,7 @@ export default function Badges() {
 				className="inline-block"
 				draggable="false"
 			/>
-			{/* <img
+			<img
 				src="/assets/icons/discord-nitro.svg"
 				alt="discord-nitro"
 				width="22"
@@ -24,7 +24,7 @@ export default function Badges() {
 				height="22"
 				className="inline-block"
 				draggable="false"
-			/> */}
+			/>
 		</div>
 	);
 }

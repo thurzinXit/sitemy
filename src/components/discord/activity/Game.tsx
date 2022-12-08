@@ -1,7 +1,8 @@
 import { useTime } from "@hooks/useTime";
 import type { GatewayActivity } from "discord-api-types/v10";
 import { getAssetUrl } from "../../../utils";
-import Button from "../Button";
+import { Button } from "../../Button";
+import { Section } from "../../Section";
 
 type InternalActivityProps = {
 	data: GatewayActivity;
@@ -11,13 +12,11 @@ export default function Game({ data }: InternalActivityProps) {
 	const time = useTime(data.timestamps!);
 
 	return (
-		<div className="mb-3">
-			<h2 className="text-zinc-700 dark:text-slate-300 font-bold text-xs leading-4 mb-2 uppercase">Playing a game</h2>
-
+		<Section title="Playing a Game" selectable={false}>
 			<div className="items-center flex">
 				<div className="relative self-start">
 					<img
-						src={getAssetUrl(data.application_id, data.assets?.large_image)}
+						src={getAssetUrl({ applicationId: data.application_id, asset: data.assets?.large_image })}
 						width="60"
 						height="60"
 						className={"block object-cover rounded-lg"}
@@ -25,7 +24,7 @@ export default function Game({ data }: InternalActivityProps) {
 
 					{data.assets && data.assets.small_image && data.assets.large_image && (
 						<img
-							src={getAssetUrl(data.application_id, data.assets?.small_image)}
+							src={getAssetUrl({ applicationId: data.application_id, asset: data.assets.small_image })}
 							width="20"
 							height="20"
 							className="rounded-full absolute -bottom-1 -right-1"
@@ -60,9 +59,11 @@ export default function Game({ data }: InternalActivityProps) {
 
 			<div className="flex mt-3 flex-col flex-wrap space-y-2 justify-center items-stretch">
 				{data.buttons?.map((button) => (
-					<Button text={button.toString()} />
+					<Button>
+						<div className="block whitespace-nowrap text-ellipsis overflow-hidden">{button.toString()}</div>
+					</Button>
 				))}
 			</div>
-		</div>
+		</Section>
 	);
 }

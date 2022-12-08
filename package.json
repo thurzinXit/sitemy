@@ -22,6 +22,7 @@
 	"homepage": "https://niskii.dev",
 	"dependencies": {
 		"clsx": "^1.2.1",
+		"framer-motion": "^7.6.19",
 		"react": "^18.0.0",
 		"react-dom": "^18.0.0"
 	},
@@ -29,21 +30,21 @@
 		"@astrojs/prefetch": "^0.1.1",
 		"@astrojs/react": "^1.2.2",
 		"@iconify-json/fa6-brands": "^1.1.7",
-		"@iconify-json/octicon": "^1.1.23",
-		"@types/node": "^18.11.9",
-		"@types/react": "^18.0.25",
+		"@iconify-json/octicon": "^1.1.24",
+		"@types/node": "^18.11.12",
+		"@types/react": "^18.0.26",
 		"@types/react-dom": "^18.0.9",
-		"@typescript-eslint/parser": "^5.43.0",
-		"@unocss/cli": "^0.47.2",
-		"@unocss/reset": "^0.47.2",
-		"astro": "^1.6.10",
-		"astro-critters": "^1.1.7",
-		"discord-api-types": "^0.37.18",
-		"eslint": "^8.28.0",
+		"@typescript-eslint/parser": "^5.46.0",
+		"@unocss/cli": "^0.47.5",
+		"@unocss/reset": "^0.47.5",
+		"astro": "^1.6.14",
+		"astro-critters": "^1.1.18",
+		"discord-api-types": "^0.37.21",
+		"eslint": "^8.29.0",
 		"eslint-config-neo": "^0.6.3",
 		"eslint-plugin-astro": "^0.21.0",
-		"prettier": "^2.6.2",
+		"prettier": "^2.8.1",
 		"prettier-plugin-astro": "^0.7.0",
-		"unocss": "^0.47.2"
+		"unocss": "^0.47.5"
 	}
 }
