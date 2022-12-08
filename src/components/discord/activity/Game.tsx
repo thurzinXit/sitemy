@@ -12,7 +12,7 @@ export default function Game({ data }: InternalActivityProps) {
 	const time = useTime(data.timestamps!);
 
 	return (
-		<Section title="Playing a Game" selectable={false}>
+		<Section title="Playing a Game" selectable={false} id="gamecard">
 			<div className="items-center flex">
 				<div className="relative self-start">
 					<img

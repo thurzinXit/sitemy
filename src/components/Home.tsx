@@ -5,7 +5,7 @@ import { Link } from "./Link";
 
 export default function Home() {
 	return (
-		<section className="place-content-center container mx-auto m-auto w-auto grow justify-center flex md:flex-row flex-col items-center">
+		<section className="place-content-center container mx-auto m-auto w-auto grow justify-center flex md:flex-row flex-col items-center" id="home">
 			<div className="lg:flex-grow md:w-1/2 lg:pr-24 md:pr-16 flex-col md:items-start mb-16 md:mb-0 justify-center">
 				<div className="flex flex-col xl:flex-row justify-between items-center">
 					<motion.div initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }}>

@@ -14,7 +14,7 @@ export default function Spotify({ data }: InternalActivityProps) {
 	const time = useTime(data.timestamps);
 
 	return (
-		<Section title="Listening to Spotify" img="/assets/icons/spotify-icon.svg">
+		<Section title="Listening to Spotify" img="/assets/icons/spotify-icon.svg" id="spotifycard">
 			<div className="items-center flex flex-row select-none">
 				<img src={data.album_art_url} alt={data.album} width="60" height="60" className="self-start" />
 

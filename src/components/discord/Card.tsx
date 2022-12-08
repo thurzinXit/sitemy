@@ -20,7 +20,7 @@ export default function Card() {
 
 	return (
 		<motion.div initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }}>
-			<div className="w-[300px] dark:text-slate-200 drop-shadow-xl">
+			<section className="w-[300px] dark:text-slate-200 drop-shadow-xl" id="card">
 				<div className="h-full rounded-2xl overflow-hidden bg-slate-50 dark:bg-zinc-900">
 					<div className="relative">
 						<picture>
@@ -72,7 +72,7 @@ export default function Card() {
 						</div>
 					</div>
 				</div>
-			</div>
+			</section>
 		</motion.div>
 	);
 }
