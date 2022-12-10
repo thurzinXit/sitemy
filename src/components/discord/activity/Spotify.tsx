@@ -16,7 +16,7 @@ export default function Spotify({ data }: InternalActivityProps) {
 	return (
 		<Section title="Listening to Spotify" img="/assets/icons/spotify-icon.svg" id="spotifycard">
 			<div className="items-center flex flex-row select-none">
-				<img src={data.album_art_url} alt={data.album} width="60" height="60" className="self-start" />
+				<img src={data.album_art_url} alt={data.album} width="60" height="60" draggable="false" className="self-start" />
 
 				<div className="ml-2.5 overflow-hidden">
 					<Link
@@ -40,8 +40,8 @@ export default function Spotify({ data }: InternalActivityProps) {
 			<div className="mt-3 select-none">
 				<ProgressBar time={time} />
 				<div className="flex flex-row items-center gap-3 justify-between">
-					{time && <span className="text-xs font-normal">{time.start}</span>}
-					{time && <span className="text-xs font-normal">{time.end}</span>}
+					{time && time.start && <span className="text-xs font-normal">{time.start}</span>}
+					{time && time.end && <span className="text-xs font-normal">{time.end}</span>}
 				</div>
 			</div>
 
@@ -50,7 +50,7 @@ export default function Spotify({ data }: InternalActivityProps) {
 					<Link href={`https://open.spotify.com/track/${data.track_id}`} label="Play on Spotify">
 						<Button>
 							<div className="flex items-center justify-center gap-1">
-								<Icon className="text-5" icon="i-fa6-brands-spotify" />
+								<Icon className="text-4" icon="i-fa6-brands-spotify" />
 								<div className="block whitespace-nowrap text-ellipsis overflow-hidden">Play on Spotify</div>
 							</div>
 						</Button>

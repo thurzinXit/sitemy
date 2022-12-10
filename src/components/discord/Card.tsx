@@ -59,11 +59,11 @@ export default function Card() {
 									iara-label=":twice:"
 									alt="twice"
 									draggable="false"
-									className="w-[48px] h-[48px] -my-px mr-1 select-none"
+									className="-my-px mr-1 select-none"
 								/>
 							</div>
 
-							<div className="w-full h-[1px] bg-zinc-800 mb-3"></div>
+							<div className="w-full h-[1px] bg-slate-200 dark:bg-zinc-800 mb-3"></div>
 							<About />
 							<Dates />
 

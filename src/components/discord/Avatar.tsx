@@ -42,15 +42,15 @@ export default function Avatar({ data }: InternalAvatarProps) {
 					<div className="grid w-full h-full">
 						<picture>
 							<source
-								src-set="/images/avatar-128.webp 1x, /images/avatar-256.webp 2x, /images/avatar-512.webp 4x"
+								src-set="/images/avatar-128.webp 1x, /images/avatar-256.webp 2x, /images/avatar-384.webp 3x, /images/avatar-512.webp 4x"
 								type="image/webp"
 							/>
 							<source
-								src-set="/images/avatar-128.png 1x, /images/avatar-256.png 2x, /images/avatar-512.png 4x"
+								src-set="/images/avatar-128.png 1x, /images/avatar-256.png 2x, /images/avatar-384.png 3x, /images/avatar-512.png 4x"
 								type="image/png"
 							/>
 							<img
-								src="/images/avatar-128.webp"
+								src="/images/avatar-512.webp"
 								alt="discord-avatar"
 								width="80"
 								height="80"

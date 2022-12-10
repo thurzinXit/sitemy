@@ -16,7 +16,7 @@ export const Section: FC<InternalSectionProps> = ({ title, selectable, img, id, 
 				<div className="text-center">
 					<h2 className="font-bold text-xs text-slate-300 leading-4 mb-2 uppercase">{title}</h2>
 				</div>
-				<img src={img} />
+				<img src={img} draggable="false" />
 			</div>
 		) : (
 			<h2 className="text-zinc-700 dark:text-slate-300 font-bold text-xs leading-4 mb-2 uppercase select-none">

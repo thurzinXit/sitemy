@@ -19,6 +19,7 @@ export default function Game({ data }: InternalActivityProps) {
 						src={getAssetUrl({ applicationId: data.application_id, asset: data.assets?.large_image })}
 						width="60"
 						height="60"
+						draggable="false"
 						className={"block object-cover rounded-lg"}
 					/>
 
