@@ -2,8 +2,8 @@ import { Button } from "@components/Button";
 import Icon from "@components/Icon";
 import { Link } from "@components/Link";
 import { Section } from "@components/Section";
-import type { Spotify } from "@composables/LanyardUser";
 import { useTime } from "@hooks/useTime";
+import type { Spotify } from "@plugins/lanyard-user";
 import { ProgressBar } from "../../ProgressBar";
 
 type InternalActivityProps = {

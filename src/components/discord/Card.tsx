@@ -1,4 +1,4 @@
-import { Lanyard, useUser } from "@composables/LanyardUser";
+import { Lanyard, useUser } from "@plugins/lanyard-user";
 import { motion } from "framer-motion";
 import { useEffect } from "react";
 import About from "./About";
@@ -15,7 +15,7 @@ export default function Card() {
 
 	useEffect(() => lanyard.connect(setUser), []);
 
-	const game = user.activities.find((x) => x.type === 0);
+	const game = user.activities.find(x => x.type === 0);
 	const { spotify } = user;
 
 	return (
@@ -46,7 +46,7 @@ export default function Card() {
 						<div className="pt-16 pb-3 px-4">
 							<div className="text-xl font-semibold leading-6">
 								<span className="text-zinc-900 dark:text-slate-50">Niskii</span>
-								<span className="dark:text-slate-300">#8956</span>
+								<span className="dark:text-slate-300">#0001</span>
 							</div>
 
 							<Badges />

@@ -10,7 +10,7 @@ export const useUser = () => {
 			username: "Niskii",
 			public_flags: 0,
 			id: "847865068657836033",
-			discriminator: "8956",
+			discriminator: "0001",
 			bot: false,
 			avatar: "c70269bfcbfb509b698914e37846efaa",
 		},

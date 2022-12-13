@@ -1,4 +1,4 @@
-import type { Status } from "@composables/LanyardUser";
+import type { Status } from "@plugins/lanyard-user";
 
 const statusClasses = {
 	online: "fill-green-600",

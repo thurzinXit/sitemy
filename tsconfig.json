@@ -35,7 +35,7 @@
 		"types": ["astro/client"],
 		"paths": {
 			"@components/*": ["src/components/*"],
-			"@composables/*": ["src/composables/*"],
+			"@plugins/*": ["./plugins/*"],
 			"@hooks/*": ["src/hooks/*"],
 			"@layouts/*": ["src/layouts/*"],
 			"@pages/*": ["src/pages/*"],
